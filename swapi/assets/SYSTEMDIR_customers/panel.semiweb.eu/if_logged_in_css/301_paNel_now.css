@@ -1,0 +1,10 @@
+
+
+    .paNel_now {
+        display: grid;
+        grid: 1fr / auto;
+        gap: 0px var(--paNel-taskbarspacinglr);
+        grid-auto-flow: column;
+    }
+
+    

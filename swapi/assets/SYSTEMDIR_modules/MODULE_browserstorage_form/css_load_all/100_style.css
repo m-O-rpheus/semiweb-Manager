@@ -1,0 +1,18 @@
+
+
+    .swapi_cookie_form [data-swapi-ev="del"],
+    .swapi_cookie_form.swapi_complete [data-swapi-ev="add"],
+    .swapi_cookie .swapi_cookie_form [data-swapi-ev="add"],
+    .swapi_cookie .swapi_cookie_form.swapi_complete [data-swapi-ev="del"]
+    {
+        display: none;
+    }
+
+    .swapi_cookie_form [data-swapi-ev="add"],
+    .swapi_cookie_form.swapi_complete [data-swapi-ev="del"],
+    .swapi_cookie .swapi_cookie_form [data-swapi-ev="del"],
+    .swapi_cookie .swapi_cookie_form.swapi_complete [data-swapi-ev="add"]
+    {
+        display: inline-block;
+    }
+

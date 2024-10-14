@@ -1,0 +1,40 @@
+
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_nav {
+        overflow: hidden;
+        display: grid;
+        grid: 0fr / 1fr;
+        gap: 0px;
+        transition: grid-template-rows 250ms linear;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_nav > div {  /* Grid Bugfix: Wenn der Inhalt länger als die Box wird, wächst die Box mit. */
+        min-height: 0px;
+    }
+
+
+    
+
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_stateopen + .slugtable_template_swapiBtn_nav {
+        grid-template-rows: 1fr;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_stateopen + .slugtable_template_swapiBtn_nav:has(.slugtable_template_swapiBtn_dropdown > .swapi_input_wrapper_dropdown[open]) {  /* Dropdown Bugfix: Damit es nicht abgeschnitten wird */
+        overflow: visible;
+    }
+
+
+
+    /* Optische Aufwertung durch Scale */
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_nav > div {
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 250ms linear;
+    }
+    
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_stateopen + .slugtable_template_swapiBtn_nav > div {
+        transform: scaleY(1);
+    }
+
+    

@@ -1,0 +1,128 @@
+
+
+    /* flow - main */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_wrap {
+        position: absolute;
+        top: calc(var(--top, 0px) + 5px);
+        right: auto;
+        bottom: auto;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 0px;
+        line-height: 0px;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_main {
+        display: inline-block;
+        width: auto;
+        padding: var(--swapi-input-padding);
+        box-shadow: var(--swapi-input-border-shadow);
+        background-color: var(--swapi-input-background-color);
+        border-radius: var(--swapi-input-border-radius);
+        pointer-events: auto;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_grouping {
+        display: inline-grid;
+        grid: 1fr / auto;
+        gap: 0px var(--swapi-input-padding);
+        grid-auto-flow: column;
+        width: auto;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_group {
+        white-space: nowrap;
+        border-radius: var(--swapi-input-border-radius);
+        box-shadow: var(--swapi-input-border-shadow);
+        overflow: hidden;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn {
+        display: inline-block;
+        width: var(--swapi-input-height);
+        height: var(--swapi-input-height);
+        background-size: var(--swapi-input-icon-size);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_strong"] {
+        background-image: var(--swapi-svg-tagstrong);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_em"] {
+        background-image: var(--swapi-svg-tagem);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_u"] {
+        background-image: var(--swapi-svg-tagu);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_sub"] {
+        background-image: var(--swapi-svg-tagsub);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_sup"] {
+        background-image: var(--swapi-svg-tagsup);
+    }
+    
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_q"] {
+        background-image: var(--swapi-svg-tagq);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_s"] {
+        background-image: var(--swapi-svg-tags);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_small"] {
+        background-image: var(--swapi-svg-tagsmall);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_a"] {
+        background-image: var(--swapi-svg-taga);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_span"] {
+        background-image: var(--swapi-svg-tagspan);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn[data-swapiwysiwyg$="_reset"] {
+        background-image: var(--swapi-svg-resetflow);
+    }
+    
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_attr {
+        width: 460px;
+        text-align: right;
+        font: var(--swapi-core-font-p);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_attr_append {
+        text-align: left;
+        padding-bottom: var(--swapi-input-padding);
+    }
+
+
+
+    /* attr - main */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_attr_main {
+        display: grid;
+        grid: 1fr / auto 1fr 2fr;
+        gap: 0px var(--swapi-input-padding);
+        align-items: center; 
+        padding-top: var(--swapi-input-padding);
+    }
+    
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_attr_remove_btn {
+		background-image: var(--swapi-svg-removeelement);
+		width: var(--swapi-input-icon-size);
+		height: var(--swapi-input-icon-size);
+		background-size: contain;
+	    text-indent: -200vw;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_attr_remove_btn:hover ~ .swapi_label_for_input {
+        filter: blur(2px) invert(5%);
+    }
+
+    

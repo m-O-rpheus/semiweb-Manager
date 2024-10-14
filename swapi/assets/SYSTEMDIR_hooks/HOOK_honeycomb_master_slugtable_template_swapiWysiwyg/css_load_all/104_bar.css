@@ -1,0 +1,67 @@
+
+
+    /* bar */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_wrap {
+        height: var(--swapi-input-height);
+        padding: var(--swapi-input-padding) 0px;
+        box-sizing: content-box;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_main {
+        display: grid;
+        grid: 1fr / 1fr auto auto;
+        gap: 0px var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align {
+        white-space: nowrap;
+        border-radius: var(--swapi-input-border-radius);
+        box-shadow: var(--swapi-input-border-shadow);
+        overflow: hidden;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align .swapi_label_for_input {
+        display: inline-block;
+        width: var(--swapi-input-height);
+        height: var(--swapi-input-height);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align .swapi_field {
+        width: inherit;
+        height: inherit;
+        border: none;
+        border-radius: 0px;
+        box-shadow: none;
+        background-size: var(--swapi-input-icon-size);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align .swapi_field:checked {
+        background-color: var(--swapi-core-default-accent);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align [data-swapiwysiwyg$="_left"] {
+        background-image: var(--swapi-svg-alignleft);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align [data-swapiwysiwyg$="_center"] {
+        background-image: var(--swapi-svg-aligncenter);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align [data-swapiwysiwyg$="_right"] {
+        background-image: var(--swapi-svg-alignright);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_align [data-swapiwysiwyg$="_justify"] {
+        background-image: var(--swapi-svg-alignjustify);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_reset_btn {
+        width: var(--swapi-input-height);
+        height: var(--swapi-input-height);
+        border-radius: var(--swapi-input-border-radius);
+        box-shadow: var(--swapi-input-border-shadow);
+        overflow: hidden;
+        background-image: var(--swapi-svg-resetflow);
+        background-size: var(--swapi-input-icon-size);
+    }
+

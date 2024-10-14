@@ -1,0 +1,124 @@
+
+
+    /* =========================================================================================================================== */
+    /* ACHTUNG: Bitte in Dieser Datei nichts ändern! Änderungen werden alle mittels Hook via Template Datei gesteuert!             */
+    /* =========================================================================================================================== */
+
+
+    .swapi_hcm_root {
+        display: grid;
+        grid: auto 1fr / auto 1fr;
+        gap: 0px var(--swapi-input-padding); /* muss so sein wegen msg container */
+    }
+
+    .swapi_hcm_msg {
+        grid-column-start: span 2;
+        color: var(--swapi-core-default-accent);
+    }
+
+    .swapi_hcm_choose figure + figure {
+        margin-top: var(--swapi-input-padding);
+    }
+
+
+
+    /* input field full width */
+    .swapi_hcm_root .swapi_label_for_input {
+        width: 100%;
+        --swapi-input-width: 100%;
+    }
+
+
+
+    /* delete or unset button sowie move up and down */
+    .swapi_hcm_delete,
+    .swapi_hcm_unset,
+    .swapi_hcm_up,
+    .swapi_hcm_down {
+        width: var(--swapi-input-icon-size);
+        height: var(--swapi-input-icon-size);
+        background-size: contain;
+        text-indent: -200vw;
+    }
+
+    .swapi_hcm_delete,
+    .swapi_hcm_unset {
+        background-image: var(--swapi-svg-removeelement);
+    }
+
+    .swapi_hcm_up {
+        background-image: var(--swapi-svg-moveup);
+    }
+
+    .swapi_hcm_down {
+        background-image: var(--swapi-svg-movedown);
+    }
+
+
+
+    /* anpassen des auswahlmenus */
+    .swapi_hcm_choose li {
+        display: grid;
+        grid: auto / 1fr auto;
+        gap: 0px;
+    }
+
+    .swapi_hcm_choosen {
+        order: 1;
+    }
+
+    
+
+    /* action buttons und header */
+    .swapi_hcm_header,
+    .swapi_hcm_ctas {
+        text-align: right;
+    }
+
+    .swapi_hcm_ctas .swapi_btn + .swapi_btn {
+        margin-left: var(--swapi-input-padding);
+    }
+
+
+
+    /* import button - hide fileupload */
+    .swapi_hcm_importfile.swapi_hcm_hide {
+        display: none !important;
+    }
+
+
+
+    /* move up and down styling fixer for transition */
+    .swapi_hcm_root .SLUGTABLE_TEMPLATE_INSERT {
+        display: block !important;
+        border: none !important;
+        padding: 0px !important;
+    }
+
+    .swapi_hcm_root div[class*="SLUGTABLE_TEMPLATE_CLASS__"] {
+        display: block !important;
+        margin: 0px !important;
+    }
+
+    .swapi_hcm_root .SLUGTABLE_CONTAINER {
+        margin: 0px !important;
+    }
+
+
+
+    /* move up and down transition */
+    .swapi_hcm_root div[class*="SLUGTABLE_TEMPLATE_CLASS__"][style*="--swapi-height-margin"] {                    /* Nur dieses Element ansprechen welches --swapi-height-margin besitzt */
+        margin: var(--swapi-height-margin) !important;
+    }
+
+    .swapi_hcm_root div.margintransition[class*="SLUGTABLE_TEMPLATE_CLASS__"][style*="--swapi-height-margin"] {   /* Nur dieses Element ansprechen welches .margintransition besitzt */
+        transition: margin 250ms ease;
+        margin: 0px !important;
+    }
+
+
+    /* =========================================================================================================================== */
+    /* ACHTUNG: Bitte in Dieser Datei nichts ändern! Änderungen werden alle mittels Hook via Template Datei gesteuert!             */
+    /* =========================================================================================================================== */
+
+    

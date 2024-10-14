@@ -1,0 +1,55 @@
+
+Stand 27.10.2022
+
+
+
+Sende vom Client zum Server:
+----------------------------
+
+	Immer:
+		- s:  Session ID
+		- c:  Um Welchen Kunden handelt es sich? ( bsp.: Webadresse markus-jaeger.de )
+		- t:  Timestamp in ms ( Doppelt identische CORS Bugfix )
+		- a:  Array mit den Datensatz
+		- gz: Browser besitzt CompressionStream Support?
+
+	zusätzlich bei CORS_cbLazyLoad
+		- send - 			LLsPage			Immer - Indicator für CORS_cbLazyLoad!
+		- send - 			LLsAndOpen		(optional)
+		- send - 			LLsInit			(optional)
+		- send - 			LLsTag			(optional)
+		- send - 			LLsUnload		(optional)
+
+	zusätzlich bei CORS_cbObjDetail
+		- send - 			ODsObj			Immer - Indicator für CORS_cbObjDetail!
+
+	zusätzlich bei CORS_cbFormAction
+		- send - 			FAsForm			Immer - Indicator für CORS_cbFormAction!
+		- send - 			FAsFields       Immer!
+		- send - 			FAsFiles		(optional)
+
+
+
+Erhalte vom Server am Client:
+-----------------------------
+
+	Immer:
+		- cbSTORAGE
+		- cbARR
+
+	zusätzlich bei CORS_cbLazyLoad
+		- callback -    	LLcbPage		( string ) 			Immer - Indicator für CORS_cbLazyLoad!
+		- callback -		LLcbHtml		( string )			Immer!
+		- callback -		LLcbStyle		( array )			( optional - Nur wenn Style vorhanden )
+		- callback -		LLcbScript		( array )			( optional - Nur wenn Script vorhanden )
+		- callback - 		LLcbInit		( number )			( optional - Bei dem erstmaligem besuchen der Webseite, sowie bei jedem weiteren Reload Vorgang, die drei ersten Seiten erhalten jeweils 100 )
+		- callback - 		LLcbAndOpen		( bool )			( optional - Die geladene Seite soll direkt aufgerufen also angezeigt werden? )
+		- callback -		LLcbRenew		( bool )			( optional - Reset des Speichers wird nur nach dem Formular absenden "_SYSTEM_login" und "_SYSTEM_logout" ausgeführt )
+
+	zusätzlich bei CORS_cbObjDetail
+		- callback - 		ODcbOBJ			( array )			Immer - Indicator für CORS_cbObjDetail!
+
+	zusätzlich bei CORS_cbFormAction
+		- callback -		FAcbForm		( string )			Immer - Indicator für CORS_cbFormAction!
+		- callback - 		FAcbAllValid	( bool )			Immer!
+		- callback - 		FAcbResult		( array )			Immer!

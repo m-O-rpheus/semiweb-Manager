@@ -1,0 +1,85 @@
+
+
+	/* input "range" custom properties */
+	.swapi {
+		--swapi-input-range-height: 68px;
+		--swapi-input-range-thumb-height: 68px;
+		--swapi-input-range-thumb-width: 26px;
+		--swapi-input-range-thumb-radius: 6px;
+		--swapi-input-range-thumb-background: currentColor none repeat scroll center center;
+	}
+
+
+
+	
+
+	/* Eingabefeld type "range" - allgemein ( override #1 ) */
+	.swapi_field_range {
+		height: var(--swapi-input-range-height);
+		border-radius: var(--swapi-input-border-radius);
+	}
+
+
+	/* Eingabefeld type "range" - thumb */
+	.swapi_field_range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		width: var(--swapi-input-range-thumb-width);
+		height: var(--swapi-input-range-thumb-height);
+		border-radius: var(--swapi-input-range-thumb-radius);
+		background: var(--swapi-input-range-thumb-background);
+		cursor: pointer;
+	}
+
+	.swapi_field_range::-moz-range-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		width: var(--swapi-input-range-thumb-width);
+		height: var(--swapi-input-range-thumb-height);
+		border-radius: var(--swapi-input-range-thumb-radius);
+		background: var(--swapi-input-range-thumb-background);
+		cursor: pointer;
+	}
+
+
+	/* Eingabefeld type "range" - track */
+	.swapi_field_range::-webkit-slider-runnable-track {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		width: 100%;
+		height: var(--swapi-input-range-thumb-height);
+		background-color: transparent;
+	}
+
+	.swapi_field_range::-moz-range-track {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		width: 100%;
+		height: var(--swapi-input-range-thumb-height);
+		background-color: transparent;
+	}
+

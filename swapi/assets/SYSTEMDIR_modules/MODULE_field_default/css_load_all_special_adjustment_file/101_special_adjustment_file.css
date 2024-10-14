@@ -1,0 +1,35 @@
+
+
+	/* Eingabefeld type "file" - allgemein ( override #1 ) */
+	.swapi_field_file {
+		height: var(--swapi-input-area-height);
+		display: inline-flex;
+		flex-flow: row wrap;
+		place-content: center;
+		align-items: center;
+		text-align: center;
+		border-radius: var(--swapi-input-border-radius);
+		cursor: pointer;
+		outline: 2px dashed currentColor;
+    	outline-offset: calc(-2px - var(--swapi-input-padding));
+	}
+
+
+	/* Eingabefeld type "file" - focus ( override #1 ) */
+	.swapi_label_for_input_file:focus-within .swapi_field_file {
+		box-shadow: var(--swapi-input-focus-shadow);
+	}
+
+
+	/* Eingabefeld type "file" - hidden ( override #1 ) */
+	input.swapi_field_file {
+		position: fixed;
+		z-index: -1;
+		top: -1px;
+		left: -1px;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+	}
+
+	

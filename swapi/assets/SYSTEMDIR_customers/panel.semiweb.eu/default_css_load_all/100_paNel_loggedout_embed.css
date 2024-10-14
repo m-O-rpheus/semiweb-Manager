@@ -1,0 +1,74 @@
+
+
+    /* Container Basic */
+    /* ========================================================================================================================================================== */
+    .paNel_loggedout_embed {
+        display: grid;
+        grid: 1fr / 100%;
+        gap: 0px;
+        place-items: center;
+        min-height: 100%;
+    }
+
+    .paNel_loggedout_screen {
+        padding: var(--paNel-spacingtbbig) var(--paNel-spacinglrbig);
+        max-width: var(--paNel-wrappersmall);
+    }
+
+    [data-swapi-page="privacy_policy.php"] .paNel_loggedout_screen {
+        max-width: var(--paNel-wrapperbig);
+    }
+
+
+
+
+
+    /* Container Inner - Menu Struktur */
+    /* ========================================================================================================================================================== */
+    .paNel_loggedout_menu {
+        color: var(--swapi-input-background-color);
+        background-color: var(--color-darkgrey);
+        border-top-left-radius: var(--swapi-input-border-radius);
+        border-top-right-radius: var(--swapi-input-border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: space-between;
+        align-items: center;
+    }
+
+    .paNel_loggedout_menu .swapi_link {
+        flex: 1 1 auto;
+        padding: var(--paNel-spacingtbbig) 0px;
+        text-align: center;
+    }
+
+    .paNel_loggedout_spacer {
+        align-self: stretch;
+        width: 1px;
+        background-color: var(--color-mediumgrey);
+    }
+
+    [data-swapi-page^="register"] .paNel_loggedout_menu [data-swapi-preload^="register"],   /* register_success.php */
+    [data-swapi-page^="lostpwd"] .paNel_loggedout_menu [data-swapi-preload^="lostpwd"],     /* lostpwd_success.php */
+    .paNel_loggedout_menu .swapi_active {
+        color: var(--color-darkgrey);
+        background-color: var(--swapi-input-background-color);
+    }
+
+
+
+
+
+    /* Container Inner - Content Struktur */
+    /* ========================================================================================================================================================== */
+    .paNel_loggedout_content {
+        color: var(--color-darkgrey);
+        background-color: var(--swapi-input-background-color);
+        border-bottom-left-radius: var(--swapi-input-border-radius);
+        border-bottom-right-radius: var(--swapi-input-border-radius);
+        overflow: hidden;
+        padding: var(--paNel-spacingtbbig) var(--paNel-spacinglrbig);
+        min-height: var(--paNel-loggedoutminheight);
+    }
+

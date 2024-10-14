@@ -1,0 +1,65 @@
+
+
+    /* MAINMENU Alignment */
+    /* ========================================================================================================================================================== */
+    .paNel_M > .swapi_flow {
+        white-space: nowrap;
+    }
+
+    .paNel_M > .swapi_flow::before, .paNel_mainmenu {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 0px;
+        vertical-align: middle;
+        white-space: normal;
+    }
+
+    .paNel_mainmenu {
+        height: auto;
+        width: 100%;
+    }
+
+
+
+
+
+    /* MAINMENU Wrapper */
+    /* ========================================================================================================================================================== */
+    .paNel_mainmenuwrap {
+        padding: 5% var(--paNel-spacinglrbig);
+        margin: 0px auto;
+        max-width: var(--paNel-wrapperbig);
+    }
+
+
+
+
+
+    /* MAINMENU Grid */
+    /* ========================================================================================================================================================== */
+    .paNel_mainmenugrid {
+        display: grid;
+        grid: auto / repeat(auto-fill, minmax(min(100%, var(--paNel-mainapp-size)), 1fr));
+        gap: 0px;
+    }
+
+
+
+
+
+    /* MAINMENU mainapp */
+    /* ========================================================================================================================================================== */
+    .paNel_mainapp .swapi_link {
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .paNel_mainapp .swapi_link::before {
+        width: calc(var(--paNel-mainapp-size) / 4);
+        height: calc(var(--paNel-mainapp-size) / 4);
+        margin: 0px auto;
+    }
+

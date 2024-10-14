@@ -1,0 +1,28 @@
+
+
+/* CSS for swapiForms - Special for Error Messages and Required */
+/* ====================================================================================== */
+
+	.swapi_form_result {             	/* Invalid Message Block */
+        display: block;
+		width: 100%;
+		color: var(--swapi-core-default-accent);
+	}
+
+	.swapi_form_result:empty {
+        display: none;
+    }
+
+	.swapi_input_required {          	/* Required notice */
+        text-align: right;
+    }
+
+	
+
+	/* Color the input field if there is an error! */
+	.swapi_input_form .swapi_label_for_input:has(+.swapi_state_invalid),					/* for all input fields */
+	.swapi_input_form .swapi_input_wrapper_dropdown:has(.swapi_state_invalid) > summary		/* for all dropdown summarys */
+	{
+		--swapi-input-background-color: var(--swapi-core-default-accent);
+	}
+

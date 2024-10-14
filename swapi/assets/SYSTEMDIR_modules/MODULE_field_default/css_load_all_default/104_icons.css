@@ -1,0 +1,32 @@
+
+
+	.swapi_field_email, .swapi_field_number, .swapi_field_tel, .swapi_field_url, .swapi_field_search, .swapi_field_password {
+		padding-right: calc(var(--swapi-input-icon-size) + (var(--swapi-input-padding) * 2));
+		background-position: right var(--swapi-input-padding) center;
+		background-size: var(--swapi-input-icon-size);
+	}
+
+	.swapi_field_email {
+		background-image: var(--swapi-svg-email);
+	}
+
+	.swapi_field_number {
+		background-image: var(--swapi-svg-number);
+	}
+
+	.swapi_field_tel {
+		background-image: var(--swapi-svg-tel);
+	}
+
+	.swapi_field_url {
+		background-image: var(--swapi-svg-url);
+	}
+
+	.swapi_field_search {
+		background-image: var(--swapi-svg-search);
+	}
+
+	.swapi_field_password {
+		background-image: var(--swapi-svg-password);
+	}
+

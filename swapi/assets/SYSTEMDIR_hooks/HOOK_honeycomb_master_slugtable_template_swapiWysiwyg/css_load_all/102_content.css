@@ -1,0 +1,111 @@
+
+
+    /* content - backdropzindex on focus */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content {
+        --backdropzindex: 0;
+        pointer-events: none;  /* padding-top click bugfix */
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content.wysiwyg_focus {
+        --backdropzindex: 10;
+    }
+
+
+
+    /* content - main */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER {
+        display: grid;
+        grid: 0px auto / 1fr auto auto auto 1fr;
+        gap: 0px;
+        pointer-events: auto;  /* padding-top click bugfix */
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER > * {
+        z-index: calc(var(--backdropzindex) + 1) !important;
+        grid-area: 2 / 1 / 3 / 6;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER > .swapi_wysiwyg_content_flow {
+        position: relative;
+        pointer-events: none;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER > .swapi_wysiwyg_content_bar {
+        z-index: calc(var(--backdropzindex) + 2) !important;
+        grid-area: 1 / 2 / 2 / 5;
+        align-self: end;
+        padding-left: var(--swapi-input-padding);
+        padding-right: calc((var(--swapi-input-padding) * 3) + (var(--swapi-input-height) * 3));
+        border-top-left-radius: var(--swapi-input-border-radius);
+        border-top-right-radius: var(--swapi-input-border-radius);
+        background-color: var(--swapi-input-background-color);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER > .swapi_hcm_move {
+        z-index: calc(var(--backdropzindex) + 3) !important;
+        grid-area: 1 / 3 / 2 / 4;
+        align-self: end;
+        margin-bottom: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER > .swapi_hcm_unset {
+        z-index: calc(var(--backdropzindex) + 3) !important;
+        grid-area: 1 / 4 / 2 / 5;
+        align-self: end;
+        margin: 0px var(--swapi-input-padding) var(--swapi-input-padding);
+    }
+
+
+
+    /* content - background */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content > .SLUGTABLE_CONTAINER::after {
+        content: "";
+        position: absolute;
+        z-index: var(--backdropzindex);
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        width: auto;
+        height: auto;
+        -webkit-backdrop-filter: blur(2px) invert(5%);
+        backdrop-filter: blur(2px) invert(5%);
+        background-color: rgba(0,0,0,0.3);
+        pointer-events: none;
+        display: block;
+        border-radius: var(--swapi-input-border-radius);
+        overflow: hidden;
+    }
+
+
+
+    /* content - autogrow empty & placeholder */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content .swapi_area_autogrow {
+        border-radius: var(--swapi-input-border-radius);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content .swapi_area_autogrow_resize:empty {
+        outline: 1px dashed var(--swapi-input-border-color);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content .swapi_area_autogrow > .swapi_label_for_input > .swapi_field::placeholder {
+        color: var(--swapi-input-border-color);
+    }
+
+    
+
+    /* content - in structure spacing fix */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content:first-child,
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__structure + .SLUGTABLE_TEMPLATE_CLASS__content {
+        padding-top: calc(var(--swapi-input-padding) * 2);
+    }
+
+
+
+    /* content - focus by class from js */
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content:not(.wysiwyg_focus) > .SLUGTABLE_CONTAINER::after,
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content:not(.wysiwyg_focus) > .SLUGTABLE_CONTAINER > .swapi_hcm_move,
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content:not(.wysiwyg_focus) > .SLUGTABLE_CONTAINER > .swapi_hcm_unset {
+        display: none;
+    }
+

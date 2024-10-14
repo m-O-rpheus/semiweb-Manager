@@ -1,0 +1,33 @@
+    
+    
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_choose li {
+        background-color: var(--swapi-input-background-color);
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        overflow: hidden;
+        color: var(--swapi-core-default-color);
+        margin-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_choosen {
+        grid-area: 1 / 1 / 2 / 3;
+        z-index: 1;
+        padding: var(--swapi-input-padding);
+        padding-right: calc(var(--swapi-input-icon-size) + (var(--swapi-input-padding) * 2));
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_delete {
+        grid-area: 1 / 2 / 2 / 3;
+        z-index: 2;
+        align-self: center;
+        margin-right: var(--swapi-input-padding);
+    }
+
+
+
+    /* hover */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_delete:hover + .swapi_btn {
+        filter: blur(2px) invert(5%);
+    }
+
+    

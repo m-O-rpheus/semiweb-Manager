@@ -1,0 +1,43 @@
+
+
+    .paNel_unittest {
+        border-radius: var(--swapi-input-border-radius);
+        border-spacing: 0px;
+        border-collapse: separate;
+        border: 1px solid var(--color-lightgrey);
+        overflow: hidden;
+    }
+
+    .paNel_unittest th {
+        font-family: 'swapi-KrubSemiBold';
+        background-color: var(--color-mediumgrey);
+        text-align: center;
+        padding: 2em 1em;
+    }
+
+    .paNel_unittest td {
+        border-top: 1px solid var(--color-lightgrey);
+        padding: 0.5em 1em;
+    }
+
+    .paNel_unittest td:first-child, .paNel_unittest th:first-child {
+        border-right: 1px solid var(--color-lightgrey); 
+    }
+
+    .paNel_unittest [class*='paNel_unittest_on_']::after {
+        content: '';
+        width: var(--paNel-iconcontsize);
+        height: var(--paNel-iconcontsize);
+        margin: 0px auto;
+    }
+
+    .paNel_unittest .paNel_unittest_on_successful::after {
+        background-image: var(--swapi-svg-successful);
+        filter: invert(72%) sepia(19%) saturate(1882%) hue-rotate(159deg) brightness(104%) contrast(97%);
+    }
+
+    .paNel_unittest .paNel_unittest_on_error::after {
+        background-image: var(--swapi-svg-close);
+        filter: invert(20%) sepia(83%) saturate(3673%) hue-rotate(281deg) brightness(115%) contrast(98%);
+    }
+

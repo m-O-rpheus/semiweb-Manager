@@ -1,0 +1,269 @@
+
+
+    /* override inherited default styling */
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_body {
+        display: contents;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_paste {
+        display: grid;
+        grid: auto auto auto auto 1fr / auto 1fr 1fr;
+        gap: 0px var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_header,
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_ctas,
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_body > .SLUGTABLE_TEMPLATE_INSERT {
+        grid-column-start: span 2;
+    }
+
+
+
+    /* override inherited default menu */
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_choose li {
+        background-color: var(--swapi-input-background-color);
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        overflow: hidden;
+        color: var(--swapi-core-default-color);
+        margin-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_choosen {
+        grid-area: 1 / 1 / 2 / 3;
+        z-index: 1;
+        padding: var(--swapi-input-padding);
+        padding-right: calc(var(--swapi-input-icon-size) + (var(--swapi-input-padding) * 2));
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_delete {
+        grid-area: 1 / 2 / 2 / 3;
+        z-index: 2;
+        align-self: center;
+        margin-right: var(--swapi-input-padding);
+    }
+
+
+
+    /* hover */
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_delete:hover + .swapi_btn,
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_unset:hover ~ div {
+        filter: blur(2px) invert(5%);
+    }
+
+
+
+    /* slugtable_template_swapiForms_types and more */
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_types {
+        grid-area: 1 / 1 / 6 / 2;
+        background-color: var(--swapi-input-background-color);
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        color: var(--swapi-core-default-color);
+        overflow: hidden;
+        align-self: start;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_add_field li {
+        padding: var(--swapi-input-padding);
+        white-space: nowrap;;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_add_field li::before {
+        content: "";
+        width: var(--swapi-input-icon-size);
+        height: var(--swapi-input-icon-size);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_fieldset_labeling {
+        border: var(--swapi-input-padding) solid transparent;
+        padding-bottom: var(--swapi-input-height);
+        position: relative;
+        z-index: 1;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_fieldset_labeling input {
+        position: absolute;
+        top: auto;
+        right: auto;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+    }
+
+
+
+    /* fieldset styling */
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__fieldset {
+        padding-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__fieldset > .SLUGTABLE_CONTAINER {
+        color: var(--swapi-core-default-color);
+        background-color: var(--swapi-input-background-color);
+    }
+
+
+
+    /* row styling */
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__row {
+        padding-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_row::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 0px;
+        z-index: 1;
+        width: var(--swapi-input-height);
+        height: var(--swapi-input-height);
+        margin-top: calc(0px - (var(--swapi-input-height) / 2));
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        background-size: var(--swapi-input-icon-size);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_row {
+        position: relative;
+        z-index: 1;
+        padding-left: calc(var(--swapi-input-height) + var(--swapi-input-padding));
+    }
+
+
+
+    /* fieldset + row styling */
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__fieldset > .SLUGTABLE_CONTAINER,
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__row > .SLUGTABLE_CONTAINER {
+        padding: var(--swapi-input-padding);
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        display: grid;
+        grid: 1fr / 1fr auto;
+        gap: 0px var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__fieldset > .SLUGTABLE_CONTAINER > .swapi_btn,
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__row > .SLUGTABLE_CONTAINER > .swapi_btn {
+        grid-area: 1 / 2 / 2 / 3;
+        z-index: 2;
+        align-self: center;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__fieldset > .SLUGTABLE_CONTAINER > .swapi_hcm_move,
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__row > .SLUGTABLE_CONTAINER > .swapi_hcm_move {
+        grid-area: 1 / 2 / 2 / 3;
+        z-index: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        place-content: space-between;
+        align-items: stretch;
+    }
+
+
+
+    /* attribute styling */
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__attribute .swapi_hcm_move {
+        display: none;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_add_attribute {
+        text-align: right;
+        padding-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .SLUGTABLE_TEMPLATE_CLASS__attribute > .SLUGTABLE_CONTAINER {
+        display: grid;
+        grid: 1fr / auto 1fr;
+        gap: 0px var(--swapi-input-padding);
+        align-items: center;
+        padding-top: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiForms"] .slugtable_template_swapiForms_attribute {
+        display: grid;
+        grid: 1fr / 1fr 2fr;
+        gap: 0px var(--swapi-input-padding);
+        align-items: center;
+    }
+
+
+
+    /* icons im menu and types menu */
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="text"]::before {
+        background-image: var(--swapi-svg-text);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="email"]::before {
+        background-image: var(--swapi-svg-email);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="number"]::before {
+        background-image: var(--swapi-svg-number);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="range"]::before {
+        background-image: var(--swapi-svg-range);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="tel"]::before {
+        background-image: var(--swapi-svg-tel);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="url"]::before {
+        background-image: var(--swapi-svg-url);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="search"]::before {
+        background-image: var(--swapi-svg-search);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="password"]::before {
+        background-image: var(--swapi-svg-password);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="textarea"]::before {
+        background-image: var(--swapi-svg-textarea);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="radio"]::before {
+        background-image: var(--swapi-svg-multiplechoice);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="checkbox"]::before {
+        background-image: var(--swapi-svg-checkbox);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="file"]::before {
+        background-image: var(--swapi-svg-file);
+    }
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="json"]::before {
+        background-image: var(--swapi-svg-json);
+    }
+
+
+
+    /* menu coloring and sort */
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_choose ul {
+        display: flex;
+        flex-flow: column nowrap;
+        place-content: flex-start;
+        align-items: stretch;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_choose [data-swapi-naming^="_SYSTEM_"] {
+        background-color: var(--swapi-input-border-color);
+        order: 9;
+    }
+
+    [data-swapi-slugtable="swapiForms"] .swapi_hcm_choose figure:last-child ul::before {
+        content: "_SYSTEM_ Templates";
+        margin-top: var(--swapi-input-padding);
+        order: 9;
+    }
+
+
+
+    /* special display none */
+    [data-swapi-slugtable="swapiForms"] [data-swapiforms-field-type="json"] .slugtable_template_swapiForms_add_attribute,  /* display none input json add attribute button */
+    [data-swapi-slugtable="swapiForms"] [data-swapi-naming^="_SYSTEM_"] .swapi_hcm_delete               /* display none _SYSTEM_ delete button */
+    {
+        display: none;
+    }
+
+    

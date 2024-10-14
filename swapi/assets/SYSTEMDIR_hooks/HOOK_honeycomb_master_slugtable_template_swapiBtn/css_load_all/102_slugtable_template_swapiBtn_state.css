@@ -1,0 +1,23 @@
+
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_state {
+        display: grid;
+        grid: auto 1fr / var(--swapi-input-width) 1fr;
+        gap: var(--swapi-input-padding);
+        padding: var(--swapi-input-padding);
+        border-radius: var(--swapi-input-border-radius);
+        background-color: var(--swapi-input-background-color);
+        box-shadow: var(--swapi-input-border-shadow);
+        margin: var(--btn-spacing-double-between-buttons) 0px;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_state .swapi_label_for_input_textarea {
+        --swapi-input-area-height: 204px;
+        grid-column-start: span 2;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .swapi_hcm_body > .slugtable_template_swapiBtn_state {
+        grid-column-start: span 2;
+        margin: 0px;
+    }
+

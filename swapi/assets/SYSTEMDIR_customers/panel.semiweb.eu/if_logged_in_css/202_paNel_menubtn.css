@@ -1,0 +1,14 @@
+
+
+    .paNel_menubtn {
+        height: calc(var(--paNel-taskbarheight) - 6px);
+        width: calc(var(--paNel-iconcontsize) * 2.5);
+        background-image: var(--swapi-svg-menudots);
+        background-size: var(--paNel-iconcontsize);
+        background-color: var(--swapi-input-background-color);
+        box-shadow: var(--swapi-input-border-shadow);
+        border-radius: var(--swapi-input-border-radius);
+        color: var(--swapi-core-default-color);
+        overflow: hidden;
+    }
+

@@ -1,0 +1,19 @@
+
+
+    .paNel_mainapp .swapi_link::before, .paNel_ico::after {
+        content: "";
+        width: var(--paNel-iconcontsize);
+        height: var(--paNel-iconcontsize);
+        pointer-events: none;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-image: var(--panel-ico);
+        mask-image: var(--panel-ico);
+        background-image: var(--color-gradient-lightpurple2lightblue);
+    }
+
+    

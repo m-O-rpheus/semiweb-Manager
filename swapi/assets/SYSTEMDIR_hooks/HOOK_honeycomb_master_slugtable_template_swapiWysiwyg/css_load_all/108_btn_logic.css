@@ -1,0 +1,23 @@
+    
+    
+    /* FLOW MENU: swapi_wysiwyg_flow_btn - logik */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn.wysiwyg_btnactive {
+        background-color: var(--swapi-core-default-accent);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_btn.wysiwyg_btnactive[data-swapiwysiwyg="flow_reset"] {
+        background-color: var(--swapi-input-border-color);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_wrap:not([data-btncount="1"]) .swapi_wysiwyg_flow_btn.wysiwyg_btnactive {
+        background-color: var(--swapi-input-border-color);
+    }
+
+    
+    
+    /* BAR MENU: swapi_wysiwyg_bar_reset_btn - logik */
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_bar_reset_btn.wysiwyg_allisreset {
+        background-color: var(--swapi-input-border-color);
+    }
+
+    

@@ -1,0 +1,11 @@
+
+
+	.swapi_input_form_branding::after {
+		content: "";
+		background-image: var(--swapi-svg-semiwebeu1);
+		background-size: contain;
+		display: block;
+		width: var(--size);
+		height: var(--size);
+	}
+

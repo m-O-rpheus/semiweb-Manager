@@ -1,0 +1,87 @@
+
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_example::after {
+        content: "Example Button";
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_btnadd::after {
+        content: "Add pseudo-class";
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_state {
+        display: grid;
+        grid: auto 1fr / auto auto 1fr;
+        gap: var(--swapi-input-padding);
+        padding-left: var(--swapi-input-padding);
+        padding-right: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_example {
+        grid-row-start: span 2;
+        place-self: center;
+        order: -9;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_state > .swapi_label_for_input_textarea,
+    [data-swapi-slugtable="swapiButton"] .swapi_hcm_body > .slugtable_template_swapiButton_state > .swapi_label_for_input_text {
+        grid-column-start: span 2;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_example i,
+    [data-swapi-slugtable="swapiButton"] .SLUGTABLE_TEMPLATE_CLASS__state .slugtable_template_swapiButton_dropdown:has([data-swapibutton-state="custom"]:not(:checked)) + .swapi_label_for_input_text {
+        display: none;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .SLUGTABLE_TEMPLATE_CLASS__state > .SLUGTABLE_CONTAINER {
+        display: grid;
+        grid: auto 1fr / 1fr auto;
+        gap: calc(var(--swapi-input-padding) * 2) 0px;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .SLUGTABLE_TEMPLATE_CLASS__state > .SLUGTABLE_CONTAINER > .swapi_btn {
+        grid-area: 2 / 2 / 3 / 3;
+        z-index: 2;
+        align-self: center;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .SLUGTABLE_TEMPLATE_CLASS__state > .SLUGTABLE_CONTAINER > .swapi_hcm_move {
+        grid-area: 2 / 2 / 3 / 3;
+        z-index: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        place-content: space-between;
+        align-items: stretch;
+        padding-right: var(--swapi-input-padding);
+    }
+
+    [data-swapi-slugtable="swapiButton"] .swapi_hcm_body {
+        background-color: var(--swapi-input-background-color);
+        color: var(--swapi-core-default-color);
+        margin-top: var(--swapi-input-padding);
+        box-shadow: var(--swapi-input-border-shadow);
+        padding-top: var(--swapi-input-padding);
+        border-radius: var(--swapi-input-border-radius);
+        text-align: center;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .swapi_hcm_body > * {
+        text-align: left;
+    }
+    
+    [data-swapi-slugtable="swapiButton"] .SLUGTABLE_TEMPLATE_CLASS__state > .SLUGTABLE_CONTAINER::before {
+        content: "";
+        grid-column-start: span 2;
+        padding-top: calc(var(--swapi-input-padding) * 2);
+        height: 0px;
+        border-bottom: 1px solid var(--swapi-input-border-color);
+    }
+
+    [data-swapi-slugtable="swapiButton"] .swapi_hcm_body > .slugtable_template_swapiButton_state {
+        --swapi-input-area-height: 306px;
+    }
+
+    [data-swapi-slugtable="swapiButton"] .slugtable_template_swapiButton_btnadd {
+        margin: calc(var(--swapi-input-padding) * 2) 0px;
+    }
+
+    

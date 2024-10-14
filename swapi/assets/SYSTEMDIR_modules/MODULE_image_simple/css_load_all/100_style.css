@@ -1,0 +1,25 @@
+
+
+/* CSS für Module */
+/* ====================================================================================== */
+
+    .swapi_img_container {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .swapi_img_container picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swapi_img_container img {
+        width: 100% !important;		/* Überschreibe die Inline HTML standard Werte */
+		height: 100% !important;	/* Überschreibe die Inline HTML standard Werte */
+		object-fit: contain;
+		object-position: center;
+        background-color: rgba(0,0,0,0.5);
+
+        /*content-visibility: auto;	/* Rendering Leistung verbessern - Aktuell nur Webkit */ /* Funktioniert nicht, da das bild nach dem Scrollen ausgeblendet bleibt */
+    }
+

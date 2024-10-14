@@ -1,0 +1,53 @@
+
+
+    .swapi {
+        /* Override Inherited */
+        --swapi-core-default-color: #000000;
+        --swapi-core-default-accent: #e028fc;
+        --swapi-input-background-color: #ffffff;
+        --swapi-input-border-radius: 6px;
+        --swapi-input-border-color: #d7d7d7;
+        --swapi-input-border-shadow: 0px 0px 0px 1px var(--swapi-input-border-color);
+        --swapi-input-focus-color: #40d6fb;
+
+
+        /* Define New */
+        --color-lightgrey: #6f6f6e;
+        --color-mediumgrey: #353634;
+        --color-darkgrey: #20201d;
+        --color-halfblack: rgba(0,0,0,0.5);
+        --color-gradient-lightpurple2lightblue: linear-gradient(-30deg, var(--swapi-core-default-accent) 0%, var(--swapi-core-default-accent) 20%, var(--swapi-input-focus-color) 80%, var(--swapi-input-focus-color) 100%);
+
+        --paNel-windowresizetop: 6px;
+        --paNel-windowresizeright: 6px;
+        --paNel-windowresizebottom: 6px;
+        --paNel-windowresizeleft: 6px;
+        --paNel-windowbarheight: 44px;
+        
+        --paNel-iconsize: 12px;
+        --paNel-iconcontsize: 26px;
+
+        --paNel-taskbarheight: 40px;
+        --paNel-taskbarspacinglr: 8px;
+
+        --paNel-spacinglrsmall: 4px;
+        --paNel-spacingtbsmall: 4px;
+        --paNel-spacinglrbig: 20px;
+        --paNel-spacingtbbig: 20px;
+
+        --paNel-wrappersmall: 500px;
+        --paNel-wrapperbig: 1700px;
+        --paNel-loggedoutminheight: 290px;
+
+        --paNel-mainapp-size: 250px;
+
+        font-family: "swapi-KrubRegular";
+        font-size: 14px;
+        color: var(--swapi-input-border-color);
+    }
+
+    .swapi, .swapi :not(.swapi_field) {
+        -webkit-user-select: none; /* Safari */
+        user-select: none; /* Standard syntax */
+    }
+

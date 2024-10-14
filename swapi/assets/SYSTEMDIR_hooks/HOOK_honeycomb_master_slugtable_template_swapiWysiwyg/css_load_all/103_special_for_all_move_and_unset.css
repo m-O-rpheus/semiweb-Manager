@@ -1,0 +1,21 @@
+
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_move {
+        height: var(--swapi-input-height);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_unset,
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_move {
+        border-radius: var(--swapi-input-border-radius);
+        box-shadow: var(--swapi-input-border-shadow);
+        overflow: hidden;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_unset,
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_hcm_move .swapi_btn {
+        padding: calc((var(--swapi-input-height) - var(--swapi-input-icon-size)) / 2);
+        box-sizing: content-box;
+        background-origin: content-box;
+    }
+
+    

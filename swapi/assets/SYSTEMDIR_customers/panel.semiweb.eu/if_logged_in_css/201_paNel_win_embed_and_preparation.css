@@ -1,0 +1,372 @@
+
+
+    /* 18.10.2022 - Change SWAPI system for paNel Windows */
+    /* ========================================================================================================================================================== */
+    .swapi {
+        --paNel-windowwidth: calc(var(--paNel-mainwidth, 0px) / 1.8);     /* Default Wert für JS - Initial Window Size */
+        --paNel-windowheight: calc(var(--paNel-mainheight, 0px) / 1.8);   /* Default Wert für JS - Initial Window Size */
+        --paNel-windowx: 0px;                                             /* Default Wert für JS */
+        --paNel-windowy: 0px;                                             /* Default Wert für JS */
+        --paNel-windowmaximize: none;                                     /* Default Wert für JS */
+    }
+
+
+
+
+
+    /* 07.03.2023 - Change SWAPI system for paNel Windows - Preparation Windows */
+    /* ========================================================================================================================================================== */
+    .swapi_is_loggedin {
+        display: grid;
+        grid: 100% / 100%;
+		gap: 0px;
+        place-items: center;
+    }
+
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M) {
+        grid-area: 1 / 1 / 2 / 2;
+        height: var(--paNel-windowheight);
+        width: var(--paNel-windowwidth);
+        margin: var(--paNel-windowy) 0px 0px var(--paNel-windowx);
+        z-index: 9;
+    }
+
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M) > .swapi_flow {
+        border-style: solid;
+        border-color: transparent;
+        border-width: calc(var(--paNel-windowresizetop) + var(--paNel-windowbarheight)) var(--paNel-windowresizeright) var(--paNel-windowresizebottom) var(--paNel-windowresizeleft);
+    }
+
+
+
+
+
+    /* 07.03.2023 - Special for MAINMENU - class insert by Hook only is loggedin */
+    /* ========================================================================================================================================================== */
+    .paNel_M {
+        grid-area: 1 / 1 / 2 / 2;                     
+        z-index: 99;
+        height: 100%;
+        background-color: var(--color-halfblack);
+        display: none;      /* triggered by js */
+    }
+
+    .paNel_M.paNel_menuactive {
+        display: block;     /* triggered by js */
+    }
+
+
+
+
+
+    /* 07.03.2023 - Change SWAPI system for paNel Windows - Preparation of WALLPAPER_AND_TASKBAR - class insert by Hook only is loggedin */
+    /* ========================================================================================================================================================== */
+    .paNel_WAT,
+    .paNel_WAT::before,
+    .paNel_WAT::after,
+    .paNel_WAT > .swapi_flow,
+    .paNel_WAT > .swapi_flow::before,
+    .paNel_WAT > .swapi_flow::after {
+        content: none !important;
+        display: contents !important;
+    }
+
+
+
+    
+
+    /* 07.03.2023 - Change SWAPI system for paNel Windows - Window active */
+    /* ========================================================================================================================================================== */
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M):not(.paNel_active) {   /* Window Not Active - Styling */
+        opacity: 0.5;
+        filter: blur(2px);    
+        z-index: 2;
+        visibility: hidden;                                                 /* Window Not Active - Scrollbar overlapping Bugfix */
+    }
+
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M)::before,
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M):not(.paNel_active) > .swapi_flow > div
+    {      
+        visibility: visible;                                                /* Window Not Active - Scrollbar overlapping Bugfix */
+    }
+
+
+
+
+
+    /* 07.03.2023 - Change SWAPI system for paNel Windows - Window design background */
+    /* ========================================================================================================================================================== */
+    .swapi_is_loggedin > .swapi_scroll:not(.paNel_M)::before {
+        content: '';
+        position: absolute;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        z-index: -1;
+        height: var(--paNel-windowheight);
+        width: var(--paNel-windowwidth);
+        border-radius: var(--swapi-input-border-radius);
+        background-color: var(--color-darkgrey);
+    }
+
+
+
+    
+
+    /* 19.10.2022 - Change SWAPI system for paNel Windows - Window general */
+    /* ========================================================================================================================================================== */
+    .paNel_win_embed {
+        position: fixed;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        z-index: 1;
+        height: var(--paNel-windowheight);
+        width: var(--paNel-windowwidth);
+        margin: calc(0px - (var(--paNel-windowresizetop) + var(--paNel-windowbarheight))) 0px 0px calc(0px - var(--paNel-windowresizeleft));
+        display: grid;
+        grid: var(--paNel-windowresizetop) auto var(--paNel-windowresizebottom) / var(--paNel-windowresizeleft) auto var(--paNel-windowresizeright);
+		gap: 0px;
+        grid-auto-flow: row;
+        visibility: hidden;
+    }
+
+    .paNel_win_embed::before {  /* Window Design foreground */
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        height: auto;
+        width: auto;
+        pointer-events: none;
+        border-radius: var(--swapi-input-border-radius);
+        visibility: visible;
+        box-shadow: inset 0px 0px 0px 1px var(--color-lightgrey), inset 0px 0px 0px 2px var(--color-mediumgrey), 0px 0px 9px 3px var(--color-halfblack);
+        background-image: linear-gradient(var(--color-mediumgrey), var(--color-mediumgrey)), linear-gradient(var(--color-halfblack), var(--color-halfblack));
+        background-size: 100% var(--paNel-windowbarheight), 100% calc(var(--paNel-windowbarheight) + 1px);
+        background-position: center top, center top;
+    }
+
+    .paNel_win_resize {
+        visibility: visible;
+        position: relative;
+        z-index: 1;
+    }
+
+    .paNel_win_resize_middle {
+        visibility: hidden;
+    }
+
+    .paNel_content {
+        min-height: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+
+
+    /* paNel Window Resize Mauspfeile */
+    .paNel_win_resize_topleft {
+        cursor: nw-resize;
+    }
+
+    .paNel_win_resize_top {
+        cursor: n-resize;
+    }
+
+    .paNel_win_resize_topright {
+        cursor: ne-resize;
+    }
+
+    .paNel_win_resize_left {
+        cursor: w-resize;
+    }
+
+    .paNel_win_resize_right {
+        cursor: e-resize;
+    }
+
+    .paNel_win_resize_bottomleft {
+        cursor: sw-resize;
+    }
+
+    .paNel_win_resize_bottom {
+        cursor: s-resize;
+    }
+
+    .paNel_win_resize_bottomright {
+        cursor: se-resize;
+    }
+
+
+
+    /* paNel Topbar */
+    .paNel_win_topbar {
+        position: absolute;
+        top: var(--paNel-windowresizetop);
+        right: 0px;
+        bottom: auto;
+        left: 0px;
+        z-index: 1;
+        width: auto;
+        height: calc(var(--paNel-windowbarheight) - (var(--paNel-windowresizetop) * 2));
+        visibility: hidden;
+        display: grid;
+        grid: 1fr / auto 1fr auto auto auto;
+        gap: 0px;
+        place-items: center stretch;
+        cursor: auto;
+    }
+
+    .paNel_win_topbar_elem {
+        visibility: visible;
+        width: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .paNel_win_topbar_title {
+        height: 100%;  /* muss height 100% sein, wegen Move funktionalität */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        font-family: "swapi-KrubSemiBold";
+        padding-left: var(--paNel-spacinglrsmall);
+    }
+
+    .paNel_win_topbar_title_text {
+        display: inline;
+        width: auto;
+        vertical-align: middle;
+        pointer-events: none;
+    }
+
+    .paNel_win_topbar_title::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 0px;
+        vertical-align: middle;
+        pointer-events: none;
+    }
+
+
+
+    /* paNel Topbar Mauspfeile */
+    .paNel_win_topbar_move {
+        cursor: move;
+    }
+
+
+
+    /* paNel Window DESIGN - Icons Grundstyling und Click layer auf minimize maximize und close */
+    .paNel_win_topbar_btn {
+        width: var(--paNel-iconcontsize);
+        height: var(--paNel-iconcontsize);
+        border: solid 1px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(var(--color-mediumgrey), var(--color-mediumgrey)), var(--color-gradient-lightpurple2lightblue);
+        background-origin: border-box, border-box;
+        background-clip: content-box, border-box;
+        background-size: auto, auto;
+        margin-left: var(--paNel-spacinglrsmall);
+        overflow: hidden;
+    }
+
+    .paNel_win_topbar_btn > a {
+        position: absolute !important;
+        top: 0px;
+        right: auto;
+        bottom: auto;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+    }
+
+    .paNel_win_topbar_btn::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: var(--paNel-iconsize);
+        mask-size: var(--paNel-iconsize);
+        background-image: var(--color-gradient-lightpurple2lightblue);
+    }
+
+
+
+    /* paNel Window DESIGN - Icons SVG */
+    .paNel_win_topbar_minimize::after {
+        -webkit-mask-image: var(--swapi-svg-minimize);
+        mask-image: var(--swapi-svg-minimize);
+    }
+
+    .paNel_win_topbar_maximize::after {
+        -webkit-mask-image: var(--swapi-svg-maximize);
+        mask-image: var(--swapi-svg-maximize);
+    }
+
+    .paNel_win_topbar_close::after {
+        -webkit-mask-image: var(--swapi-svg-close);
+        mask-image: var(--swapi-svg-close);
+    }
+
+
+
+    /* paNel Window DESIGN - Icons Hover und Sonderanpassung */
+    .paNel_win_topbar_minimize:hover,
+    .paNel_win_topbar_maximize:hover,
+    .paNel_win_topbar_close:not(:hover)
+    {
+        background-size: 0px, auto;
+    }
+
+    .paNel_win_topbar_minimize:hover::after,
+    .paNel_win_topbar_maximize:hover::after,
+    .paNel_win_topbar_close:not(:hover)::after
+    {
+        background-image: linear-gradient(var(--color-mediumgrey), var(--color-mediumgrey));
+    }
+
+
+
+    /* paNel Window DESIGN - Window Favicon */
+    .paNel_win_topbar_ico {
+        height: 100%;  /* muss height 100% sein, wegen Move funktionalität */
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: center;
+        align-items: center;
+    }
+
+
+
+    /* Maximize */
+    .swapi_is_loggedin > .swapi_scroll.paNel_maximize {
+        --paNel-windowwidth: var(--paNel-mainwidth);
+        --paNel-windowheight: calc(var(--paNel-mainheight) - var(--paNel-taskbarheight));
+        --paNel-windowx: 0px;
+        --paNel-windowy: var(--paNel-taskbarheight);
+    }
+
+    .swapi_is_loggedin > .swapi_scroll.paNel_maximize .paNel_win_embed::before {
+        border-radius: 0px;
+    }
+
+    .swapi_is_loggedin > .swapi_scroll.paNel_maximize .paNel_win_resize,
+    .swapi_is_loggedin > .swapi_scroll.paNel_maximize .paNel_win_topbar_move {
+        cursor: auto;
+    }
+

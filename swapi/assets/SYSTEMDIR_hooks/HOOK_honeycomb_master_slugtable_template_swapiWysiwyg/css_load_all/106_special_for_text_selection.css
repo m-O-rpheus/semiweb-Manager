@@ -1,0 +1,122 @@
+
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_area_autogrow_resize {  /* Selection Performence + */
+        will-change: contents;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_span,
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_mark,
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_area_autogrow_resize b {
+        font: inherit;
+        display: inline;
+        width: auto;
+        height: auto;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_wysiwyg_flow_mark {
+        background-color: var(--swapi-core-default-accent);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .swapi_area_autogrow_resize b[class] {
+        background-color: rgba(0,0,0,0.10);
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .SLUGTABLE_TEMPLATE_CLASS__content [data-swapiwysiwyg="content_area"]::selection {
+        font: inherit;
+        color: transparent;
+        background-color: transparent;
+    }
+
+
+
+
+
+    /* Tag Formatierung */
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_strong {
+        -webkit-text-stroke-width: 0.07ex;  /* https://caniuse.com/text-stroke */
+        -webkit-text-stroke-color: currentColor;
+        text-shadow: 0px 0px 0px currentColor, 0px 0px 1px currentColor;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_em {
+        font-style: oblique !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_u {
+        text-decoration: underline;
+        text-decoration-thickness: 0.15ex;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_sub {
+        position: relative;
+        bottom: -0.5ex;
+        box-shadow: inset 0px 1px 0px 0px currentColor;
+        opacity: 0.5;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_sup {
+        position: relative;
+        top: -0.5ex;
+        box-shadow: inset 0px -1px 0px 0px currentColor;
+        opacity: 0.5;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_q {
+        color: var(--swapi-input-background-color);
+        background-color: rgba(0,0,0,0.60) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_s {
+        text-decoration: line-through;
+        text-decoration-thickness: 0.15ex;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_small {
+        box-shadow: inset 0px 1px 0px 0px currentColor, inset 0px -1px 0px 0px currentColor;
+        opacity: 0.5;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] .flow_tag_a {
+        text-decoration: underline;
+        text-decoration-thickness: 0.15ex;
+        text-decoration-style: dotted;
+    }
+
+    /* ein custom element besitzt keine weiteren stylings */
+    /*[data-swapi-slugtable="swapiWysiwyg"] .flow_tag_span {
+
+    }*/
+
+
+    /*  Erklärung für den Bereich Tag Formatierung
+
+        Bisher konnte ich noch keine Lösung finden, um alles vernüftig zu stylen.
+    
+        Folgendes darf hier nicht benutzt werden. ::before, ::after innerhalb der <b> Tags mit position: absolute, fixed. Da sonst der Zeilenumbruch zwischen <textarea> und <div> unterschiedlich wird.
+        Das betrifft nach tests jeden Browser. Aber bisher keine Lösung für das Problem gefunden. Außer line-break: anywhere; was aber zur folge hat, das auch ganze Wörter umgebrochen werden.
+
+        Folgendes wurde als funktionsfähig getestet, aber erzeugt wieder neue Probleme die nicht gelöst werden können.
+
+        #für THISWIDTH gibt es in CSS keine Lösung.
+        b::after {
+            content: attr(data-c);
+            font: inherit;
+            display: inline;
+            width: auto;
+            height: auto;
+            font-weight: bold;
+            margin-left: - THISWIDTH;
+        }
+    
+        #bisher beste Lösung mithilfe von externem Filter SVG - Wenn alle Fonts genutzer werden sollen.
+        b {
+            filter: url('data:image/svg+xml;...');
+        }
+
+        #bisher beste Lösung mit uniwdith font - Löst das Problem mit font weight bold und italic - damit es einheitlich aussieht sollten alle eingabefelder diese font bekommen.
+
+    */
+
+
+
+

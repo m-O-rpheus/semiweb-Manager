@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+    /* TEST */
+    [data-swapi-slugtable="swapiBtn"] .swapi_hcm_body {
+        --btn-background: linear-gradient(90deg, rgba(229,253,134,1) 0%, rgba(229,253,134,1) 50%, rgba(106,125,29,1) 50%, rgba(106,125,29,1) 100%);  /* TEST */
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_btn {
+        background-color: blue;
+        text-align: center;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_example {
+        background-color: grey;
+        padding: 20px 40px;
+    }
+
+    [data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_example::before {
+        content: "TEST";
+    }
+
+
+
+
+    /*[data-swapi-slugtable="swapiBtn"] .slugtable_template_swapiBtn_column::after {
+        content: "";
+        position: absolute;
+        top: auto;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        width: auto;
+        height: 40px;
+
+
+        background-color: red;
+
+
+
+    }*/

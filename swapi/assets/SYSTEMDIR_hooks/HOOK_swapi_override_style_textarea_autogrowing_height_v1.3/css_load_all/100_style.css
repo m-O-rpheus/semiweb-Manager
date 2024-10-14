@@ -1,0 +1,57 @@
+
+
+    .swapi_area_autogrow {
+        position: relative !important;
+        z-index: 1 !important;
+        background-color: var(--swapi-input-background-color) !important;
+        color: var(--swapi-core-default-color) !important;
+        font: var(--swapi-core-font-p) !important;
+        text-align: left !important;
+    }
+
+    .swapi_area_autogrow, .swapi_area_autogrow > .swapi_label_for_input, .swapi_area_autogrow [data-swapi-override-style="area_autogrow"], .swapi_area_autogrow_resize {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .swapi_area_autogrow [data-swapi-override-style="area_autogrow"], .swapi_area_autogrow_resize {
+        margin: 0px !important;
+        border: none !important;
+        padding: 0px !important;
+        resize: none !important;
+        overflow: hidden !important;
+        white-space: pre-wrap !important;
+        overflow-wrap: break-word !important;
+        background-color: transparent !important;
+        font: inherit !important;
+        color: inherit !important;
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        text-align: inherit !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+    }
+
+    .swapi_area_autogrow [data-swapi-override-style="area_autogrow"] {
+        position: absolute !important;
+        top: 0px !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: 0px !important;
+        z-index: 1 !important;
+        height: 100% !important;
+        color: transparent !important;
+        caret-color: var(--swapi-core-default-color) !important;
+    }
+
+    .swapi_area_autogrow_resize::after {
+        display: inline !important;
+        content: '\feff' !important;
+    }
+
+    .swapi_area_autogrow_resize {
+        pointer-events: none !important;
+    }
+
+    

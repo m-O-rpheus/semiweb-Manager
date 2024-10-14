@@ -1,0 +1,169 @@
+
+
+/* CSS für Module */
+/* ====================================================================================== */
+
+    .swapi {
+        --swapi-slider-iconsize: 40px;
+    }
+
+
+
+
+
+    .swapi_img_slider,
+    .swapi_img_slider .swapi_img_container
+    {
+        position: relative;
+    }
+
+    .swapi_img_slider_slide_wrapper,
+    .swapi_img_slider_slide
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .swapi_img_slider_slide_wrapper {
+        grid-auto-flow: column;
+        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;                                   /* Hide scrollbar - IE and Edge */
+        scrollbar-width: none;                                      /* Hide scrollbar - Firefox */
+    }
+
+    .swapi_img_slider_slide_wrapper::-webkit-scrollbar { /* Hide scrollbar - Chrome, Safari and Opera */
+        display: none;
+    }
+
+    .swapi_img_slider_slide {
+        scroll-snap-align: start;
+    }
+
+    .swapi_img_slider .swapi_img_container picture {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+
+    .swapi_img_slider .swapi_img_container img {
+        object-fit: cover;
+    }
+
+    .swapi_img_slider_slide > [class*="_container"] {
+        grid-area: 1 / 1 / 2 / 2;
+        z-index: 2;
+    }
+
+    .swapi_img_slider_radio {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 1px;
+        height: 1px;
+        z-index: -999;
+    }
+
+    .swapi_img_slider_text_container,
+    .swapi_img_slider_slide > label,
+    .swapi_img_slider_chevron span
+    {
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: center;
+        align-items: center;
+    }
+
+    .swapi_img_slider_slide > label {
+        position: absolute;
+        bottom: 0px;
+    }
+
+
+
+    /* Chevron */
+    .swapi_img_slider_chevron_prev {
+        left: 0px;
+    }
+
+    .swapi_img_slider_chevron_next {
+        right: 0px;
+    }
+
+    .swapi_img_slider_chevron {
+        top: 0px;
+        z-index: 5;
+        cursor: pointer;
+        visibility: hidden;
+    }
+
+    .swapi_img_slider_chevron span {
+        width: var(--swapi-slider-iconsize);
+        height: var(--swapi-slider-iconsize);
+        margin: calc(var(--swapi-slider-iconsize) / 4);
+        border-radius: 50%;
+        border: 1px solid currentColor;
+        font-size: calc(var(--swapi-slider-iconsize) / 2);
+        line-height: 0px;
+        background-color:rgba(255,255,255,0.2);
+        cursor: inherit;
+        visibility: inherit;
+    }
+
+    .swapi_img_slider_chevron:hover {
+        background-color:rgba(255,255,255,0.2);
+    }
+
+    .swapi_img_slider_radio:checked + div .swapi_img_slider_chevron {
+        visibility: visible;
+    }
+
+
+
+    /* Bullets */
+    .swapi_img_slider_bullet {
+        left: 0px;
+        right: 0px;
+        z-index: 4;
+        width: auto;
+        font-size: 0px;
+        line-height: 0px;
+        pointer-events: none;
+    }
+
+    .swapi_img_slider_bull {
+        box-sizing: content-box;
+        display: block;
+        padding: calc(var(--swapi-slider-iconsize) / 2) 0px;
+        margin: 0px 6px;
+        height: 6px;
+        width: var(--swapi-slider-iconsize);
+        pointer-events: auto;
+        cursor: pointer;
+        background-color:rgba(255,255,255,0.5);
+        background-clip: content-box;
+        visibility: hidden !important;
+    }
+
+    .swapi_img_slider_bull_active {
+        visibility: visible !important;
+    }
+
+    .swapi_img_slider_radio:checked + div .swapi_img_slider_bull {
+        background-color: #fff;
+    }
+
+
+
+    /* Form */
+    .swapi_img_slider > form {
+        display: none;
+    }
+

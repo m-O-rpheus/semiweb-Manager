@@ -1,0 +1,73 @@
+
+
+	/* #1 */
+	/* All input fields - general */
+	.swapi_field {
+		font: var(--swapi-core-font-p);
+		color: var(--swapi-core-default-color);
+		background-color: var(--swapi-input-background-color);
+		box-shadow: var(--swapi-input-border-shadow);
+		width: var(--swapi-input-width);
+		height: var(--swapi-input-height);
+		display: inline-block;
+	}
+
+	.swapi_label, .swapi_field {
+		vertical-align: top;  /* ACHTUNG: wird hier eine Änderung vorgenommen, so muss auch die separate style Datei für input "dropdown" angeglichen werden */
+	}
+
+	.swapi_label_for_input {
+		display: inline-block;
+	}
+
+
+	/* All input fields - single line + textarea ( append to #1 ) */
+	.swapi_field_textline {
+		padding: 0px var(--swapi-input-padding);
+		border-radius: var(--swapi-input-border-radius);
+	}
+
+
+	/* All input fields - textarea ( override and append to #1 ) */
+	.swapi_field_textarea {
+		height: var(--swapi-input-area-height);
+		resize: vertical;
+		white-space: pre-wrap;
+    	overflow-wrap: break-word;	/* defined in chrome as dafault */
+	}
+
+
+	/* All input fields - checkbox and radio ( override and append to #1 ) */
+	.swapi_field_selection {
+		width: var(--swapi-input-size);
+		height: var(--swapi-input-size);
+		cursor: pointer;
+		border: 3px solid var(--swapi-input-background-color);
+	}
+
+	.swapi_field_radio {
+		border-radius: 50%;	
+	}
+
+	.swapi_field_radio:checked {
+		background-image: radial-gradient(#000 0%, #000 100%);
+	}
+	
+	.swapi_field_checkbox:checked {
+		background-image: var(--swapi-svg-check);
+	}
+
+
+	/* #2 */
+	/* All input fields - focus - WICHTIG: Safari hat eine Eigenheit, dort funktioniert focus nicht bei type "checkbox", "radio", "range", "file" da dies von einer Systemeinstellung anhängig ist! */
+	.swapi_field:focus {
+		box-shadow: var(--swapi-input-focus-shadow);
+	}
+
+
+	/* #3 */
+	/* All input fields - readonly - WICHTIG: Laut HTML Standard nur gültig für folgende Elemente: text,email,number,tel,url,search,password,textarea */
+	.swapi_field[readonly] {
+		filter: var(--swapi-input-readonly-filter);
+	}
+

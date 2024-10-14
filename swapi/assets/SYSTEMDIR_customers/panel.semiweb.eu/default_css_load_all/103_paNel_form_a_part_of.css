@@ -1,0 +1,45 @@
+
+
+    .paNel_form_a_part_of .swapi_label_for_input {
+        display: block;
+        width: 100%;
+        --swapi-input-width: 100%;
+    }
+
+    .paNel_form_a_part_of::before, .paNel_form_a_part_of::after {
+        content: "";
+        background-image: var(--color-gradient-lightpurple2lightblue);
+        height: var(--paNel-spacinglrsmall);
+        border-radius: var(--paNel-spacinglrsmall);
+    }
+
+    .paNel_form_a_part_of::before {
+        margin-bottom: var(--paNel-spacingtbbig);
+    }
+    
+    .paNel_form_a_part_of::after {
+        margin-top: var(--paNel-spacingtbbig);
+    }
+
+    .paNel_form_a_part_of .swapi_input_form {
+        --size: 96px;  /* branding size */
+        position: relative;
+        z-index: 1;
+        padding-left: calc(var(--size) + var(--paNel-spacinglrbig));
+        min-height: var(--size);
+    }
+
+    .paNel_form_a_part_of .swapi_input_form_branding {
+        position: absolute;
+        top: 0px;
+        right: auto;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        width: var(--size);
+    }
+
+    .paNel_form_a_part_of .swapi_input_form_branding::after {
+        height: 100%;
+    }
+

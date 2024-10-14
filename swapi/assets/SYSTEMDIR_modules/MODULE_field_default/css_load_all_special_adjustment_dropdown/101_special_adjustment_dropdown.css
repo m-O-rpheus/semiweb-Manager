@@ -1,0 +1,128 @@
+
+
+	/* input "dropdown" custom properties */
+	.swapi {
+		--swapi-input-dropdown-maxheight: 280px;
+	}
+
+
+
+    
+
+    .swapi_input_wrapper_dropdown {
+        z-index: 1;
+        position: relative;
+        font: var(--swapi-core-font-p);
+        color: var(--swapi-core-default-color);
+        width: var(--swapi-input-width);
+        display: inline-block;
+        vertical-align: top;  /* ACHTUNG: wird hier eine Änderung vorgenommen, so muss auch die separate style Datei "general" angeglichen werden */
+    }
+
+    .swapi_input_wrapper_dropdown[open] {
+        z-index: 2;
+    }
+
+    .swapi_input_wrapper_dropdown > summary, .swapi_input_wrapper_dropdown > div {
+        background-color: var(--swapi-input-background-color);
+        border-radius: var(--swapi-input-border-radius);
+    }
+
+    .swapi_input_wrapper_dropdown > summary {
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+        height: var(--swapi-input-height);
+        padding: 0px var(--swapi-input-padding);
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: flex-start;
+        align-items: center;
+    }
+
+    .swapi_input_wrapper_dropdown > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .swapi_input_wrapper_dropdown:not([open]) > summary, .swapi_input_wrapper_dropdown[open] > div {
+        box-shadow: var(--swapi-input-border-shadow);
+    }
+
+    .swapi_input_wrapper_dropdown > summary:active, .swapi_input_wrapper_dropdown[open] > summary:hover {   /* focus */
+        box-shadow: var(--swapi-input-focus-shadow);
+    }
+
+    .swapi_input_wrapper_dropdown > div {
+        z-index: 1;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        width: auto;
+        height: auto;
+        padding: var(--swapi-input-padding) 0px;
+        max-height: var(--swapi-input-dropdown-maxheight);
+        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .swapi_input_wrapper_dropdown[data-swapi-dropdown-direction="down"] > div {     /* öffne nach unten */
+        top: 0px;
+        bottom: auto;
+        border-top: var(--swapi-input-height) solid transparent;
+    }
+    
+    .swapi_input_wrapper_dropdown[data-swapi-dropdown-direction="up"] > div {       /* öffne nach oben */
+        top: auto;
+        bottom: 0px;
+        border-bottom: var(--swapi-input-height) solid transparent;
+    }
+
+    .swapi_input_wrapper_dropdown .swapi_label_for_input {
+        padding: 0px var(--swapi-input-padding);
+        min-height: var(--swapi-input-height);
+        display: grid;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        gap: 0px;
+    }
+
+    .swapi_input_wrapper_dropdown .swapi_label_for_input:not(.swapi_label_for_input_selection) {
+        grid-template-columns: 1fr;
+    }
+
+    .swapi_input_wrapper_dropdown .swapi_label_for_input.swapi_label_for_input_selection {
+        grid-template-columns: auto 1fr;
+        align-content: center;
+    }
+
+    .swapi_input_wrapper_dropdown .swapi_label_for_input:hover {
+        background-color: var(--swapi-input-border-color);
+    }
+
+    .swapi_input_wrapper_dropdown .swapi_label_for_input {
+        --swapi-input-width: 100%;
+    }
+
+
+    /* Icon */
+    .swapi_input_wrapper_dropdown > summary::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: var(--swapi-input-padding);
+        bottom: auto;
+        left: auto;
+        z-index: 1;
+        width: var(--swapi-input-icon-size);
+        height: 100%;
+		background-position: center;
+		background-size: contain;
+        background-image: var(--swapi-svg-dropdown);
+        transform: rotate(0deg);
+    }
+
+    .swapi_input_wrapper_dropdown[open] > summary::after {
+        transform: rotate(180deg);
+    }
+

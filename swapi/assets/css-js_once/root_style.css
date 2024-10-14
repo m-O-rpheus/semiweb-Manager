@@ -1,0 +1,174 @@
+/*
+
+	WICHTIG:
+
+	Bitte in dieser Datei nichts ändern:
+
+	MJ - Version 2022 - Shadow DOM
+
+*/
+
+
+
+
+
+/* CSS Reset und Allgemein */
+/* ====================================================================================== */
+
+	:host {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	*, ::before, ::after {
+		-webkit-appearance: none;
+		appearance: none;
+		-webkit-user-drag: none;  				/* drag bei Bildern und Links verhindern - Bei allen anderen Elementen ist diese funktion glaube ich sowieso aus */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-tap-highlight-color: transparent;
+		margin: 0px;
+		padding: 0px;
+		border: none;
+		outline: none;
+		inset: auto; 							/* top right bottom left shorthand */
+		order: 5;
+		flex: 0 1 auto;
+		box-sizing: border-box;
+		position: static;
+		text-decoration: none;
+		color: inherit;
+		font: inherit;
+		background: transparent none center center/contain no-repeat padding-box border-box scroll;
+		width: 100%;
+		height: auto;
+		display: block;
+		z-index: auto;
+		content: none;
+		text-align: inherit;
+	}
+
+	b, i, small, abbr, cite, dfn, em, kbd, strong, samp, var, bdo, br, map, object, q, span, sub, sup, label, u, s {
+		width: auto;
+		display: inline;
+	}
+
+	input, textarea, select, a, button {
+		width: auto;
+		display: inline-block;
+	}
+
+	area, datalist, link, param, script, style, template, [hidden] {
+		display: none !important;
+	}
+
+	pre, code {
+		font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+		white-space: pre;
+	}
+
+	table {
+		display: table;
+		table-layout: auto;
+		border-spacing: 0px;
+		border-collapse: collapse;
+	}
+
+	caption {
+		display: table-caption;
+	}
+
+	colgroup {
+		display: table-column-group;
+	}
+
+	col {
+		display: table-column;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tbody {
+		display: table-row-group;
+	}
+
+	tfoot {
+		display: table-footer-group;
+	}
+
+	tr {
+		display: table-row;
+	}
+
+	td, th {
+		width: auto;
+		display: table-cell;
+	}
+
+	iframe {
+		height: 60vh;
+	}
+
+
+
+
+
+/* Container Grundstyling sowenig Selektoren wie möglich! */
+/* ====================================================================================== */
+
+	.swapi {
+		--swapi-core-font-p: normal normal normal 16px/1.50 Arial,"Helvetica Neue",Helvetica,sans-serif;	    /* Muss so bleiben, weil Module ebenfalls darauf zugreifen */
+		--swapi-core-default-color: #000;																	   /* Muss so bleiben, weil Module ebenfalls darauf zugreifen */
+		--swapi-core-default-accent: #FF7D61;															   /* Muss so bleiben, weil Module ebenfalls darauf zugreifen */
+	}
+
+	.swapi {
+		font: var(--swapi-core-font-p);
+		color: var(--swapi-core-default-color);
+		display: grid;
+		grid: 100% / 100%;
+		gap: 0px;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		text-align: left;
+	}
+
+	.swapi_section, .swapi_pseudo, .swapi_root {
+		grid-area: 1 / 1 / 2 / 2;
+        z-index: 2;
+		overflow: hidden;
+	}
+
+	.swapi_root {
+		z-index: 1;
+	}
+
+	.swapi_scroll {
+		height: calc(100% / var(--swapi-count-initial));
+	}
+
+	.swapi_flow {
+		height: 100%;
+		overflow: hidden;
+        overflow-y: scroll;   		/* muss scroll sein, nicht auto - wegen Momentum */
+		overflow-x: hidden;
+		will-change: scroll-position;
+		z-index: auto !important;	/* Safari Bugfix */
+		opacity: 1 !important;		/* Safari Bugfix */
+	}
+
+
+
+
+
+/* Complete - Zeige einen Hacken für eine gewisse Zeit x. Bei ".swapi_submit" sowie ".swapi_cookie_set" */
+/* ====================================================================================== */
+	.swapi_complete > .swapi_btn::after {
+		content: "\2714";
+		display: inline;
+	}
+

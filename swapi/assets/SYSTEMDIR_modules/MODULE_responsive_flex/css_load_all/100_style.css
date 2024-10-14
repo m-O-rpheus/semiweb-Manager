@@ -1,0 +1,66 @@
+
+
+/* CSS für Module */
+/* ====================================================================================== */
+
+/* Hinweis:
+
+	Hat man ein Zwei Spaltiges Layout z.b Bild Links, Text Rechts. Und es sollen beide Spalten miteinander vertauscht werden.
+	Bitte einfach ein "row-reverse" auf das <ul> Setzen. Diese Lösung greift dann nur bei Desktop. Jedoch nicht Mobile.
+	Beispiel:
+
+    .swapi_responsive_flex[style*="mincolumns:1"][style*="maxcolumns:2"]:nth-child(even) .swapi_responsive_flex_ul {
+        flex-direction: row-reverse !important;
+    }
+
+*/
+
+
+/* CSS Standardstyling "responsive_flex" */
+
+/* Version 1.1
+
+	- Folgendes wurde in Version 1.1 im vergleich zu 1.0 geändert.
+	  overflow: hidden wurde entfernt. Da sonst bereiche abgeschnitten werden.
+	  padding-top in margin-top umgestellt.
+	  pointer-events Hinzugefügt.
+
+	  Die Möglichkeiten von CSS sind mit v1.1 inzwischen zu 99% ausgereizt. Nur mit Tricks kann man noch Speziellere anpassungen vornehmen */
+/* ====================================================================================== */
+
+	.swapi_responsive_flex {
+		width: 100% !important;
+		max-width: 100% !important;
+		display: block !important;
+		pointer-events: none !important;
+	}
+
+	.swapi_responsive_flex_ul {
+		margin: calc(0px - var(--swapi-rowgap)) 0px 0px 0px !important;
+		padding: 0px !important;
+		border: none !important;
+		width: calc(100% + var(--swapi-columngap)) !important;
+		display: flex !important;
+		flex-flow: row wrap !important;
+		place-content: flex-start space-between !important; /* align content, justify content */
+		align-items: stretch !important;
+		pointer-events: none !important;
+	}
+
+	.swapi_responsive_flex_ul > li {
+		/* 4px = Leerraum Bugfix - Verhindert das die Elemente 100% passgenau eingebaut werden müssen! */
+		margin: 0px !important;
+		padding: 0px var(--swapi-columngap) 0px 0px !important;
+		border: none !important;
+		height: auto !important;
+		order: 5 !important;
+		flex: 1 1 auto !important;
+		min-width: min((var(--swapi-minwidth) + var(--swapi-columngap)), (100% / var(--swapi-mincolumns)) - 2px) !important;
+		width: calc((100% / var(--swapi-maxcolumns)) - 4px) !important;
+		pointer-events: auto !important;
+	}
+
+	.swapi_responsive_flex_ul > .swapi_responsive_flex_li {
+		margin-top: var(--swapi-rowgap) !important;
+	}
+

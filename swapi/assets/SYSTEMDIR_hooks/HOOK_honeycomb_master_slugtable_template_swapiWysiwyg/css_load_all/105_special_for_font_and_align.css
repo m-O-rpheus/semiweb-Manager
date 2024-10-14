@@ -1,0 +1,66 @@
+    
+
+    /* font */
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_p"] .swapi_area_autogrow {
+        font: var(--swapi-core-font-p) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h1"] .swapi_area_autogrow {
+        font: var(--swapi-font-h1) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h2"] .swapi_area_autogrow {
+        font: var(--swapi-font-h2) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h3"] .swapi_area_autogrow {
+        font: var(--swapi-font-h3) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h4"] .swapi_area_autogrow {
+        font: var(--swapi-font-h4) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h5"] .swapi_area_autogrow {
+        font: var(--swapi-font-h5) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_h6"] .swapi_area_autogrow {
+        font: var(--swapi-font-h6) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_li"] .swapi_area_autogrow {
+        font: var(--swapi-core-font-p) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_code"] .swapi_area_autogrow {
+        font: var(--swapi-font-code) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_adress"] .swapi_area_autogrow {
+        font: var(--swapi-font-adress) !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-format$="_blockquote"] .swapi_area_autogrow {
+        font: var(--swapi-font-blockquote) !important;
+    }
+
+
+
+    /* align */
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-align$="_left"] .swapi_area_autogrow {
+        text-align: left !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-align$="_center"] .swapi_area_autogrow {
+        text-align: center !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-align$="_right"] .swapi_area_autogrow {
+        text-align: right !important;
+    }
+
+    [data-swapi-slugtable="swapiWysiwyg"] [data-wysiwyg-js-align$="_justify"] .swapi_area_autogrow {
+        text-align: justify !important;
+    }
+

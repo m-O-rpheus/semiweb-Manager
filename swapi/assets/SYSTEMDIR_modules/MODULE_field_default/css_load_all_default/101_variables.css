@@ -1,0 +1,19 @@
+
+
+	/* input custom properties */
+	.swapi {
+		--swapi-input-width: 220px;
+		--swapi-input-height: 34px;
+		--swapi-input-area-height: 102px;
+		--swapi-input-size: 18px;
+		--swapi-input-icon-size: 14px;
+		--swapi-input-padding: 10px;
+		--swapi-input-readonly-filter: opacity(80%);
+		--swapi-input-border-radius: 6px;
+		--swapi-input-background-color: #fff;
+		--swapi-input-border-color: #dadada;
+		--swapi-input-border-shadow: 0px 0px 0px 1px var(--swapi-input-border-color);
+		--swapi-input-focus-color: #14d3d5;
+		--swapi-input-focus-shadow: 0px 0px 2px 2px var(--swapi-input-focus-color);
+	}
+

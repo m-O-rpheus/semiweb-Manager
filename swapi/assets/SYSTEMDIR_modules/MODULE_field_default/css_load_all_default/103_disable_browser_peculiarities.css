@@ -1,0 +1,22 @@
+
+
+	/* Eingabefeld type "number" - entferne eigenheiten ( override #1 ) */
+    .swapi_field_number::-webkit-outer-spin-button,
+    .swapi_field_number::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0px;
+    }
+
+    .swapi_field_number {
+        -moz-appearance: textfield;
+    }
+
+
+	/* Eingabefeld type "search" - entferne eigenheiten ( override #1 ) */
+    .swapi_field_search::-webkit-search-decoration,
+    .swapi_field_search::-webkit-search-cancel-button,
+    .swapi_field_search::-webkit-search-results-button,
+    .swapi_field_search::-webkit-search-results-decoration {
+        display: none;
+    }
+

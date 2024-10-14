@@ -1,0 +1,61 @@
+
+
+    .paNel_task {
+        height: var(--paNel-taskbarheight);
+        width: calc(var(--paNel-iconcontsize) * 2.5);
+        position: relative;
+        z-index: 1;
+    }
+
+    .paNel_task_title {
+        position: absolute;
+        top: var(--paNel-taskbarheight);
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        z-index: 1;
+        width: auto;
+        transform: translateX(-50%);
+        background-color: var(--color-darkgrey);
+        pointer-events: none;
+        padding: var(--paNel-spacingtbsmall) var(--paNel-spacinglrsmall);
+        box-shadow: 0px -1px 0px 0px var(--color-darkgrey);
+        display: none;
+    }
+
+    .paNel_task_field:hover + .paNel_task_title {
+        display: block;
+    }
+
+    .paNel_task_field {
+        position: absolute;
+        top: 2px;
+        right: 0px;
+        bottom: 2px;
+        left: 0px;
+        z-index: 1;
+        width: auto;
+        border-radius: var(--swapi-input-border-radius);
+        border: solid 1px transparent;
+        background-image: linear-gradient(var(--color-mediumgrey), var(--color-mediumgrey)), var(--color-gradient-lightpurple2lightblue);
+        background-origin: border-box, border-box;
+        background-clip: content-box, border-box;
+        background-size: auto, auto;
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .paNel_task_field:hover,
+    .paNel_task.paNel_active .paNel_ico {
+        background-size: 0px, auto;
+    }
+
+    .paNel_task_field:hover::after,
+    .paNel_task.paNel_active .paNel_ico::after {
+        background-image: linear-gradient(var(--color-mediumgrey), var(--color-mediumgrey));
+    }
+
+    
